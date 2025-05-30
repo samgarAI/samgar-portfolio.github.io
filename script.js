@@ -51,3 +51,37 @@ langSelect.addEventListener('change', () => {
     el.textContent = translations[lang][key];
   });
 });
+function toggleMenu() {
+  const menu = document.getElementById("mobileMenu");
+  const burger = document.getElementById("hamburger");
+
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  burger.classList.toggle("active");
+}
+
+// Language Sync (біреуін өзгертсе екіншісімен теңдей болады)
+const langDesktop = document.getElementById("language-switch");
+const langMobile = document.getElementById("language-switch-mobile");
+
+function switchLanguage(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    el.textContent = translations[lang][key];
+  });
+  if (langDesktop) langDesktop.value = lang;
+  if (langMobile) langMobile.value = lang;
+}
+
+langDesktop?.addEventListener('change', () => switchLanguage(langDesktop.value));
+langMobile?.addEventListener('change', () => switchLanguage(langMobile.value));
+const themeToggleDesktop = document.getElementById('theme-toggle');
+const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+}
+
+// Екеуіне де бірдей функцияны байлаймыз
+themeToggleDesktop?.addEventListener('click', toggleTheme);
+themeToggleMobile?.addEventListener('click', toggleTheme);
