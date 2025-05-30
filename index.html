@@ -10,22 +10,43 @@
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
 <nav class="navbar">
   <div class="logo">Samgar<span>.</span></div>
-  <ul class="nav-links">
+
+  <!-- DESKTOP MENU -->
+  <ul class="nav-links" id="desktopMenu">
     <li><a href="#home" data-i18n="home">Басты</a></li>
     <li><a href="#about" data-i18n="about">Мен туралы</a></li>
     <li><a href="#projects" data-i18n="projects">Жобалар</a></li>
     <li><a href="#contact" data-i18n="contact">Байланыс</a></li>
-    <li><button id="theme-toggle">🌓</button></li>
     <li>
       <select id="language-switch">
         <option value="kk">KZ Қазақ</option>
         <option value="en">EN English</option>
       </select>
     </li>
+    <li><button id="theme-toggle">🌓</button></li>
   </ul>
+
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" data-i18n="home">Басты</a>
+    <a href="#about" data-i18n="about">Мен туралы</a>
+    <a href="#projects" data-i18n="projects">Жобалар</a>
+    <a href="#contact" data-i18n="contact">Байланыс</a>
+    <select id="language-switch-mobile">
+      <option value="kk">KZ Қазақ</option>
+      <option value="en">EN English</option>
+    </select>
+    <button id="theme-toggle-mobile">🌓</button>
+  </div>
 </nav>
 
 <!-- ===== HERO SECTION ===== -->
